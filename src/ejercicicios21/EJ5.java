@@ -11,5 +11,5 @@ public class EJ5 {
 		System.out.println(misterio(3,6));
 
 	}
-
+	//Pensado en papel, comprobado en programa
 }
