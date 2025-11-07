@@ -2,26 +2,24 @@ package ejerciciosExtra;
 
 public class ej6 {
 	//Calcular el valor de la posición fibonacci usando recursividad.
+	//Sucesión de números donde cada número es la suma de los dos anteriores
 	
-	//sucesión de números donde cada número es la suma de los dos anteriores
-	
-	public static int fibonacci(int i, int j, int indice, int max) {
+	public static int fibonacci(int i, int j,int indice, int n) {
 		int suma;
-		//if (i==0) {System.out.println(i);}
-		//if (j==1) {System.out.println(j);}
-		if (max==0) {
-			return 0;
-		}
-		indice = i;
-		suma = i + j;
-		j= suma;
-		System.out.println(suma);
-		max--;
+		
+		if (indice==n) {return i;} 
+		suma = i+j;
+		i = j;
+		j = suma;
 		indice++;
-		return fibonacci(suma,j,indice, max);
+		
+		return fibonacci(i,j,indice, n);
 	}
 	public static void main(String[] args) {
-		System.out.println(fibonacci(0,1,0,6));
+		int n= 7;
+		int resultado = fibonacci(0,1,0,n);
+		System.out.println("El valor de la posicion " + n + " de Fibonacci es "+ resultado);
+		
 
 	}
 
