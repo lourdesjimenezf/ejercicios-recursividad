@@ -5,19 +5,58 @@ import java.util.List;
 
 public class ej1 {
 	
-	int numDiscos; //número discos
-	char origen; //torre origen
-	char auxiliar; //torre auxiliar
-	char destino; //torre destino
+	static int numDiscos; //número discos
+	static char origen = 'o'; //torre origen
+	static char auxiliar = 'a'; //torre auxiliar
+	static char destino = 'd'; //torre destino
 	
-		 
-	public static void hanoi(int n, char origen, char auxiliar, char destino) {
+	public static void main(String[] args) {
+		hanoi(4, origen, auxiliar, destino );
+	}
+	
+	public static void hanoi(int numDiscos, char origen, char auxiliar, char destino) {
 		//si solo hay un disco muevelo de o a d
-		if(n==1) {
-			System.out.println();
+		if(numDiscos==1) {
+			System.out.println("Mover disco grande de origen a destino");
+			return;
+		}
+		if(numDiscos>1) {
+			
+			//Mueves los n-1 discos de A a B, usando C como auxiliar.
+			hanoi(numDiscos -1, origen, destino, auxiliar);
+			//Mueves el disco más grande de A a C
+			System.out.println("Mover disco " + numDiscos +" de origen a destino");;
+			//Mueves los n-1 discos de B a C, usando A como auxiliar
+			hanoi(numDiscos-1, auxiliar, origen, destino);
 		}
 		
+	}
+}
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
 	//ESTA MAL: NO SE PUEDE COLOCAR UN DISCO GRANDE SOBRE UNO PEQUEÑO
 	
 	/*
@@ -63,9 +102,7 @@ public class ej1 {
 */	
 	
 
-	}
-
-}
+	
 
 
 
